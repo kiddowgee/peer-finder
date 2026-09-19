@@ -1,0 +1,306 @@
+/* ==========================================================================
+   Gym Peer Finder - Connect & Messaging Page Stylesheet
+   ========================================================================== */
+
+:root {
+    --primary-color: #FF5E00;       /* Electric Orange */
+    --primary-hover: #E05200;
+    --dark-bg: #121212;             /* Matte Black */
+    --card-bg: #FFFFFF;
+    --light-bg: #F4F6F8;
+    --text-dark: #111111;
+    --text-light: #FFFFFF;
+    --text-muted: #888888;
+    --border-color: #E0E0E0;
+    --radius: 10px;
+    --font-main: 'Segoe UI', Impact, -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--light-bg);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* Header & Navigation */
+header {
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    padding: 2rem 1.5rem 1.2rem;
+    border-bottom: 4px solid var(--primary-color);
+}
+
+header .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.branding h1 {
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 900;
+}
+
+.branding h4 {
+    font-size: 1rem;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 0.2rem;
+    font-weight: 700;
+}
+
+nav {
+    background-color: #000000;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+nav li a {
+    display: block;
+    color: var(--text-light);
+    text-decoration: none;
+    padding: 1rem 1.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+}
+
+nav li a:hover,
+nav li a.active {
+    background-color: var(--primary-color);
+    color: #FFFFFF;
+}
+
+/* Container & Header */
+.container {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.page-header h2 {
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+.page-header p {
+    color: #666;
+    font-size: 1rem;
+}
+
+/* Chat Layout Dashboard */
+.chat-layout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    background: #FFFFFF;
+    border-radius: var(--radius);
+    padding: 0;
+    overflow: hidden;
+    min-height: 550px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Sidebar Conversations */
+.chat-sidebar {
+    background: var(--dark-bg);
+    color: var(--text-light);
+    padding: 1.2rem;
+    border-right: 1px solid var(--border-color);
+}
+
+.chat-sidebar h3 {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    border-bottom: 2px solid #222;
+    padding-bottom: 0.5rem;
+}
+
+.user-list {
+    list-style: none;
+}
+
+.chat-user-item {
+    padding: 0.8rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+    background: #1A1A1A;
+    transition: background 0.2s ease;
+}
+
+.chat-user-item strong {
+    display: block;
+    font-size: 0.95rem;
+    color: #FFFFFF;
+}
+
+.chat-user-item .preview-text {
+    display: block;
+    font-size: 0.75rem;
+    color: #888888;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 0.2rem;
+}
+
+.chat-user-item:hover,
+.chat-user-item.active {
+    background: var(--primary-color);
+}
+
+.chat-user-item:hover strong,
+.chat-user-item.active strong,
+.chat-user-item:hover .preview-text,
+.chat-user-item.active .preview-text {
+    color: #FFFFFF;
+}
+
+/* Main Chat Section */
+.chat-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.5rem;
+    background: #FFFFFF;
+}
+
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 0.8rem;
+    border-bottom: 2px solid var(--light-bg);
+    margin-bottom: 1rem;
+}
+
+.chat-header h3 {
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 1.3rem;
+}
+
+.chat-type-badge {
+    background: var(--light-bg);
+    color: #555;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+}
+
+/* Chat Stream */
+.chat-history {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    overflow-y: auto;
+    max-height: 380px;
+    padding-right: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.message {
+    max-width: 70%;
+    padding: 0.8rem 1.2rem;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.message.received {
+    background: #F0F0F0;
+    color: var(--text-dark);
+    align-self: flex-start;
+    border-bottom-left-radius: 2px;
+}
+
+.message.sent {
+    background: var(--primary-color);
+    color: #FFFFFF;
+    align-self: flex-end;
+    border-bottom-right-radius: 2px;
+}
+
+.message .time {
+    display: block;
+    font-size: 0.7rem;
+    opacity: 0.8;
+    margin-top: 0.3rem;
+    text-align: right;
+}
+
+/* Input Form */
+.chat-input-form {
+    display: flex;
+    gap: 0.8rem;
+    padding-top: 0.8rem;
+    border-top: 2px solid var(--light-bg);
+}
+
+.chat-input-form input {
+    flex: 1;
+    padding: 0.8rem 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-family: inherit;
+}
+
+.chat-input-form input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.chat-input-form .btn {
+    width: auto;
+    padding: 0.8rem 1.8rem;
+}
+
+footer {
+    background-color: var(--dark-bg);
+    color: var(--text-muted);
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 3rem;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .chat-layout {
+        grid-template-columns: 1fr;
+    }
+}

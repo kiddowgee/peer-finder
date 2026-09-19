@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/groups_styles.css">
+    <title>Gym Groups | Gym Peer Finder</title>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="branding">
+                <h1>WELCOME TO GYM PEER FINDER</h1>
+                <h4>YOUR NO.1 GYM BUDDY FINDER</h4>
+            </div>
+            <div class="auth-buttons">
+                <!-- Dynamically injected by auth.js -->
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gym-groups.html" class="active">Groups</a></li>
+            <li><a href="peer-match.html">Peer Match</a></li>
+            <li><a href="connect.html">Connect</a></li>
+            <li><a href="profile.html">Profile</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <section class="page-header">
+            <h2>Gym Groups & Training Communities</h2>
+            <p>Find local training groups, run clubs, or create your own squad.</p>
+            <button type="button" class="btn btn-create-trigger" id="openModalBtn">+ Create New Group</button>
+        </section>
+
+        <!-- Search & Filter Controls -->
+        <section class="search-filter-section card">
+            <div class="search-bar">
+                <input type="text" id="groupSearchInput" placeholder="Search by group name, activity, or gym location...">
+            </div>
+            <div class="filter-dropdowns">
+                <select id="categoryFilter">
+                    <option value="all">All Focus Areas</option>
+                    <option value="powerlifting">Powerlifting / Strength</option>
+                    <option value="cardio">Cardio & Running</option>
+                    <option value="hiit">HIIT & Cross-Training</option>
+                    <option value="bodybuilding">Bodybuilding</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- Groups Grid Container -->
+        <section class="group-grid" id="groupGrid">
+            <!-- Group Card 1 -->
+            <article class="card group-card" data-id="101" data-name="Early Bird Powerlifters" data-category="powerlifting">
+                <div class="group-header">
+                    <h3>Early Bird Powerlifters</h3>
+                    <span class="group-badge">Strength</span>
+                </div>
+                <div class="group-details">
+                    <p><strong>Gym:</strong> Metro Fitness Center</p>
+                    <p><strong>Schedule:</strong> Mon / Wed / Fri — 06:00 AM</p>
+                    <p><strong>Members:</strong> <span class="member-count">12</span> active lifters</p>
+                    <p class="group-desc">Focused on heavy squat, bench, and deadlift progression with certified spotters.</p>
+                </div>
+                <button type="button" class="btn join-btn">Join Group</button>
+            </article>
+
+            <!-- Group Card 2 -->
+            <article class="card group-card" data-id="102" data-name="Weekend Trail & Track Runners" data-category="cardio">
+                <div class="group-header">
+                    <h3>Weekend Trail & Track Runners</h3>
+                    <span class="group-badge">Cardio</span>
+                </div>
+                <div class="group-details">
+                    <p><strong>Gym:</strong> Outdoor / City Park & Apex Hub</p>
+                    <p><strong>Schedule:</strong> Saturday — 07:30 AM</p>
+                    <p><strong>Members:</strong> <span class="member-count">28</span> active runners</p>
+                    <p class="group-desc">Casual 5k to 10k weekend runs followed by group mobility and recovery sessions.</p>
+                </div>
+                <button type="button" class="btn join-btn">Join Group</button>
+            </article>
+
+            <!-- Group Card 3 -->
+            <article class="card group-card" data-id="103" data-name="HIIT & Conditioning Crew" data-category="hiit">
+                <div class="group-header">
+                    <h3>HIIT & Conditioning Crew</h3>
+                    <span class="group-badge">HIIT</span>
+                </div>
+                <div class="group-details">
+                    <p><strong>Gym:</strong> Apex Fitness Hub</p>
+                    <p><strong>Schedule:</strong> Tue / Thu — 05:30 PM</p>
+                    <p><strong>Members:</strong> <span class="member-count">8</span> active members</p>
+                    <p class="group-desc">High-intensity circuit training, kettlebell workouts, and bodyweight conditioning.</p>
+                </div>
+                <button type="button" class="btn join-btn">Join Group</button>
+            </article>
+        </section>
+    </main>
+
+    <!-- JOIN GROUP CONFIRMATION MODAL -->
+    <div id="joinModal" class="modal-overlay" style="display: none;">
+        <div class="modal-box card">
+            <h2 id="joinModalTitle">Join Group</h2>
+            <p>Select your chat history preference before entering the group conversation in Connect:</p>
+
+            <form id="joinModalForm">
+                <div class="chat-mode-options">
+                    <label class="radio-option">
+                        <input type="radio" name="chatMode" value="retrieve" checked>
+                        <div>
+                            <strong>Retrieve Past Group Messages</strong>
+                            <span>Load previous conversation history to catch up on group notes.</span>
+                        </div>
+                    </label>
+
+                    <label class="radio-option">
+                        <input type="radio" name="chatMode" value="fresh">
+                        <div>
+                            <strong>Start Fresh</strong>
+                            <span>Clear previous message history and start with a clean chat feed.</span>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="submit" class="btn">Confirm & Open Chat</button>
+                    <button type="button" class="btn btn-secondary" id="closeJoinModalBtn">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Tshire x Retha. All rights reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="scripts/auth.js"></script>
+    <script src="scripts/groups_script.js"></script>
+</body>
+</html>

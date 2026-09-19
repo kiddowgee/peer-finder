@@ -1,0 +1,348 @@
+/* ==========================================================================
+   Gym Peer Finder - Authentication Page Stylesheet
+   ========================================================================== */
+
+:root {
+    --primary-color: #FF5E00;       /* Electric orange */
+    --primary-hover: #E05200;
+    --dark-bg: #121212;             /* Deep matte black */
+    --card-bg: #FFFFFF;
+    --light-bg: #F4F6F8;
+    --text-dark: #111111;
+    --text-light: #FFFFFF;
+    --text-muted: #888888;
+    --border-color: #E0E0E0;
+    --radius: 10px;
+    --font-main: 'Segoe UI', Impact, -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--light-bg);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* Header & Nav */
+header {
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    padding: 2rem 1.5rem 1.2rem;
+    border-bottom: 4px solid var(--primary-color);
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.branding h1 {
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 900;
+}
+
+.branding h4 {
+    font-size: 1rem;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 0.2rem;
+    font-weight: 700;
+}
+
+nav {
+    background-color: #000000;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+nav li a {
+    display: block;
+    color: var(--text-light);
+    text-decoration: none;
+    padding: 1rem 1.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    transition: all 0.2s ease-in-out;
+}
+
+nav li a:hover,
+nav li a.active {
+    background-color: var(--primary-color);
+    color: #FFFFFF;
+}
+
+/* Main Container & Auth Card */
+.auth-container {
+    max-width: 480px;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+}
+
+.auth-card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 2rem;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-top: 6px solid var(--primary-color);
+}
+
+/* Tab Toggle Buttons */
+.tab-buttons {
+    display: flex;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.tab-btn {
+    flex: 1;
+    background: none;
+    border: none;
+    padding: 0.8rem;
+    font-size: 1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tab-btn.active {
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--primary-color);
+}
+
+/* Forms */
+.auth-form h2 {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin-bottom: 1.2rem;
+    color: var(--dark-bg);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    margin-bottom: 0.4rem;
+    color: #222;
+}
+
+.form-group input {
+    padding: 0.8rem;
+    border: 2px solid #E0E0E0;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-family: inherit;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: #FFFFFF;
+    padding: 0.85rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.btn-block {
+    width: 100%;
+}
+
+.btn:hover {
+    background-color: var(--primary-hover);
+}
+
+footer {
+    background-color: var(--dark-bg);
+    color: var(--text-muted);
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 3rem;
+    font-weight: 600;
+}
+
+/* Multi-Step Indicators & Navigation */
+.step-indicator {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.step-dot {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #E0E0E0;
+    color: #555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 0.9rem;
+}
+
+.step-dot.active {
+    background: var(--primary-color);
+    color: #FFFFFF;
+}
+
+.step-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.step-buttons .btn {
+    flex: 1;
+}
+
+.btn-secondary {
+    background-color: #444444;
+    color: #FFFFFF;
+}
+
+.btn-secondary:hover {
+    background-color: #222222;
+}
+
+/* --- Header Logout & Auth Buttons --- */
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Orange Block LOGOUT Button (Matches image) */
+.btn-logout {
+    background-color: #FF5E00;
+    color: #FFFFFF;
+    border: none;
+    padding: 0.75rem 1.8rem;
+    font-size: 0.95rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    border-radius: 6px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: background-color 0.2s ease;
+}
+
+.btn-logout:hover {
+    background-color: #E05200;
+}
+
+.btn-auth-header {
+    background-color: transparent;
+    border: 2px solid #FF5E00;
+    color: #FF5E00;
+    padding: 0.6rem 1.2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.btn-auth-header:hover {
+    background-color: #FF5E00;
+    color: #FFFFFF;
+}
+
+/* --- Access Control Modal Prompt --- */
+.auth-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.auth-modal-box {
+    background: #FFFFFF;
+    border-top: 6px solid #FF5E00;
+    border-radius: 10px;
+    padding: 2rem;
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.auth-modal-box h2 {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    color: #121212;
+    margin-bottom: 0.8rem;
+}
+
+.auth-modal-box p {
+    color: #555555;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.auth-modal-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.auth-modal-actions .btn {
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+}

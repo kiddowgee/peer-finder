@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/auth_styles.css">
+    <title>Login / Register | Gym Peer Finder</title>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="branding">
+                <h1>Welcome to Gym Peer Finder</h1>
+                <h4>Your No.1 Gym Buddy Finder</h4>
+            </div>
+            <div class="auth-buttons">
+                <!-- Injected via auth.js -->
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gym-groups.html">Groups</a></li>
+            <li><a href="peer-match.html">Peer Match</a></li>
+            <li><a href="connect.html">Connect</a></li>
+            <li><a href="profile.html">Profile</a></li>
+        </ul>
+    </nav>
+
+    <main class="auth-container">
+        <div class="auth-card">
+            <!-- Main View Tabs -->
+            <div class="tab-buttons">
+                <button type="button" class="tab-btn active" id="tabLoginBtn">Login</button>
+                <button type="button" class="tab-btn" id="tabRegisterBtn">Register</button>
+            </div>
+
+            <!-- LOGIN FORM -->
+            <form id="loginForm" class="auth-form">
+                <h2>Account Login</h2>
+                <div class="form-group">
+                    <label for="loginEmail">Email Address</label>
+                    <input type="email" id="loginEmail" placeholder="e.g. john@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" placeholder="Enter password" required>
+                </div>
+                <button type="submit" class="btn btn-block">Log In</button>
+            </form>
+
+            <!-- MULTI-STEP REGISTER FORM -->
+            <form id="registerForm" class="auth-form" style="display: none;">
+                <!-- Step Progress Bar -->
+                <div class="step-indicator">
+                    <span class="step-dot active">1</span>
+                    <span class="step-dot">2</span>
+                    <span class="step-dot">3</span>
+                </div>
+
+                <!-- STEP 1: Account & Identity -->
+                <div class="reg-step" id="step1">
+                    <h2>Step 1: Account & Identity</h2>
+                    <div class="form-group">
+                        <label for="regFullName">Full Name & Surname *</label>
+                        <input type="text" id="regFullName" maxlength="50" placeholder="e.g. Tshire Retha" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="regAge">Age *</label>
+                        <input type="number" id="regAge" min="16" max="99" placeholder="e.g. 24" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="regEmail">Email Address *</label>
+                        <input type="email" id="regEmail" placeholder="e.g. tshire@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="regPassword">Password *</label>
+                        <input type="password" id="regPassword" minlength="6" placeholder="Create password" required>
+                    </div>
+                    <button type="button" class="btn btn-block" id="nextToStep2">Next: Logistics</button>
+                </div>
+
+                <!-- STEP 2: Logistics & Location -->
+                <div class="reg-step" id="step2" style="display: none;">
+                    <h2>Step 2: Logistics & Location</h2>
+                    <div class="form-group">
+                        <label for="regGym">Primary Home Gym *</label>
+                        <input type="text" id="regGym" placeholder="e.g. Metro Fitness Center" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="regLocation">Location / Region *</label>
+                        <input type="text" id="regLocation" placeholder="e.g. Gauteng, ZA" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="regTimeSlot">Availability Window *</label>
+                        <select id="regTimeSlot" required>
+                            <option value="">Select Training Window</option>
+                            <option value="Mornings (05:00 - 09:00)">Mornings (05:00 - 09:00)</option>
+                            <option value="Afternoons (12:00 - 15:00)">Afternoons (12:00 - 15:00)</option>
+                            <option value="Evenings (17:00 - 20:00)">Evenings (17:00 - 20:00)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="regDays">Workout Days (Optional)</label>
+                        <input type="text" id="regDays" placeholder="e.g. Mon, Wed, Fri (Default: Flexible Days)">
+                    </div>
+                    <div class="step-buttons">
+                        <button type="button" class="btn btn-secondary" id="backToStep1">Back</button>
+                        <button type="button" class="btn" id="nextToStep3">Next: Style</button>
+                    </div>
+                </div>
+
+                <!-- STEP 3: Fitness Style -->
+                <div class="reg-step" id="step3" style="display: none;">
+                    <h2>Step 3: Fitness Style</h2>
+                    <div class="form-group">
+                        <label for="regGoal">Core Fitness Goal *</label>
+                        <select id="regGoal" required>
+                            <option value="Hypertrophy / Bodybuilding">Hypertrophy / Bodybuilding</option>
+                            <option value="Strength / Powerlifting">Strength / Powerlifting</option>
+                            <option value="Endurance & Cardio">Endurance & Cardio</option>
+                            <option value="Weight Loss">Weight Loss</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="regExperience">Skill Level *</label>
+                        <select id="regExperience" required>
+                            <option value="intermediate">Intermediate (1-3 yrs)</option>
+                            <option value="beginner">Beginner (0-1 yrs)</option>
+                            <option value="advanced">Advanced (3+ yrs)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="regBio">Workout Vibe / Bio (Optional)</label>
+                        <textarea id="regBio" rows="3" placeholder="Describe your workout vibe or what you look for in a partner..."></textarea>
+                    </div>
+                    <div class="step-buttons">
+                        <button type="button" class="btn btn-secondary" id="backToStep2">Back</button>
+                        <button type="submit" class="btn">Complete Registration</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Tshire x Retha. All rights reserved.</p>
+    </footer>
+
+    <script src="scripts/auth.js"></script>
+    <script src="scripts/login_script.js"></script>
+</body>
+</html>

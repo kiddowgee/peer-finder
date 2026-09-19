@@ -1,0 +1,247 @@
+/* ==========================================================================
+   Gym Peer Finder - Home Page Stylesheet
+   ========================================================================== */
+
+:root {
+    --primary-color: #FF5E00;
+    --primary-hover: #E05200;
+    --dark-bg: #121212;
+    --card-bg: #ffffff;
+    --light-bg: #F4F6F8;
+    --text-dark: #111111;
+    --text-light: #FFFFFF;
+    --text-muted: #888888;
+    --border-color: #333333;
+    --radius: 10px;
+    --font-main: 'Segoe UI', Impact, -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--light-bg);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* Header & Nav */
+header {
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    text-align: center;
+    padding: 2.5rem 1rem 1.5rem;
+    border-bottom: 4px solid var(--primary-color);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 900;
+}
+
+header h4 {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 0.3rem;
+    font-weight: 700;
+}
+
+nav {
+    background-color: #000000;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+nav li a {
+    display: block;
+    color: var(--text-light);
+    text-decoration: none;
+    padding: 1rem 1.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    transition: all 0.2s ease-in-out;
+}
+
+nav li a:hover,
+nav li a.active {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, rgba(0,0,0,0.85), rgba(30,30,30,0.9)), 
+                url('https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=1200&q=80') center/cover;
+    color: var(--text-light);
+    text-align: center;
+    padding: 5rem 1.5rem;
+    border-radius: var(--radius);
+    margin: 2rem auto;
+    max-width: 1100px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+.hero h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+}
+
+/* About Section */
+.about {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #ffffff;
+    border-radius: var(--radius);
+    border-left: 6px solid var(--primary-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.about h2 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin-bottom: 1rem;
+}
+
+/* Features Grid */
+.features {
+    max-width: 1100px;
+    margin: 2rem auto;
+}
+
+.features h2 {
+    text-align: center;
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin-bottom: 1.5rem;
+}
+
+.feature-card {
+    background: #ffffff;
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    margin-bottom: 1rem;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.feature-card h3 {
+    color: var(--primary-color);
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+}
+
+/* Buttons */
+.cta-button, .btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    padding: 0.85rem 1.8rem;
+    font-size: 1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out, transform 0.1s ease;
+}
+
+.cta-button:hover, .btn:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+footer {
+    background-color: var(--dark-bg);
+    color: var(--text-muted);
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 3rem;
+    font-weight: 600;
+    border-top: 1px solid var(--border-color);
+}
+
+/* ==========================================================================
+   Header Auth Button Styling Fix
+   ========================================================================== */
+
+/* Header Flex Container */
+header .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Orange Block LOGOUT Button */
+.btn-logout {
+    background-color: #FF5E00 !important;
+    color: #FFFFFF !important;
+    border: none !important;
+    padding: 0.75rem 1.8rem !important;
+    font-size: 0.95rem !important;
+    font-weight: 900 !important;
+    text-transform: uppercase !important;
+    border-radius: 6px !important;
+    cursor: pointer !important;
+    letter-spacing: 1px !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    transition: background-color 0.2s ease !important;
+}
+
+.btn-logout:hover {
+    background-color: #E05200 !important;
+}
+
+/* Outline LOGIN / REGISTER Button */
+.btn-auth-header {
+    background-color: transparent !important;
+    border: 2px solid #FF5E00 !important;
+    color: #FF5E00 !important;
+    padding: 0.61rem 1.4rem !important;
+    font-size: 0.85rem !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    border-radius: 6px !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    transition: all 0.2s ease !important;
+}
+
+.btn-auth-header:hover {
+    background-color: #FF5E00 !important;
+    color: #FFFFFF !important;
+}

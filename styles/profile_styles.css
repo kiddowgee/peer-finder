@@ -1,0 +1,486 @@
+/* ==========================================================================
+   Gym Peer Finder - High-Contrast Athletic Profile Stylesheet
+   ========================================================================== */
+
+:root {
+    --primary-color: #FF5E00;       /* High-energy electric orange */
+    --primary-hover: #E05200;
+    --dark-bg: #121212;             /* Deep matte black */
+    --card-bg: #FFFFFF;
+    --light-bg: #F4F6F8;
+    --text-dark: #111111;
+    --text-light: #FFFFFF;
+    --text-muted: #888888;
+    --border-color: #E0E0E0;
+    --radius: 10px;
+    --font-main: 'Segoe UI', Impact, -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--light-bg);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* --- Header & Branding with Auth Button --- */
+header {
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    padding: 2rem 1.5rem 1.2rem;
+    border-bottom: 4px solid var(--primary-color);
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.branding h1 {
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 900;
+}
+
+.branding h4 {
+    font-size: 1rem;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 0.2rem;
+    font-weight: 700;
+}
+
+.btn-auth {
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 0.6rem 1.2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.btn-auth:hover {
+    background-color: var(--primary-color);
+    color: #FFFFFF;
+}
+
+/* --- Navigation --- */
+nav {
+    background-color: #000000;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+nav li a {
+    display: block;
+    color: var(--text-light);
+    text-decoration: none;
+    padding: 1rem 1.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    transition: all 0.2s ease-in-out;
+}
+
+nav li a:hover,
+nav li a.active {
+    background-color: var(--primary-color);
+    color: #FFFFFF;
+}
+
+/* --- Dashboard Layout --- */
+.dashboard-container {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 1.5rem;
+}
+
+.card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* --- Left Profile Card --- */
+.user-card {
+    background: #FFFFFF;
+    border-radius: var(--radius);
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border-left: 6px solid var(--primary-color);
+}
+
+.banner {
+    background: var(--dark-bg);
+    height: 70px;
+    position: relative;
+}
+
+.verified-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: var(--primary-color);
+    color: #FFFFFF;
+    font-weight: 800;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+}
+
+.avatar-wrapper {
+    position: relative;
+    width: 85px;
+    height: 85px;
+    margin: -40px 0 0 1.5rem;
+}
+
+.avatar-wrapper img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #FFFFFF;
+}
+
+.avatar-edit-btn {
+    position: absolute;
+    bottom: -5px;
+    right: -10px;
+    background: var(--dark-bg);
+    color: #FFFFFF;
+    border: 1px solid var(--primary-color);
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 0.2rem 0.5rem;
+    cursor: pointer;
+}
+
+.user-info {
+    padding: 1rem 1.5rem 1.5rem;
+}
+
+.user-info h2 {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+.role-badge {
+    display: inline-block;
+    background: var(--primary-color);
+    color: #FFFFFF;
+    font-size: 0.7rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 6px;
+    margin-left: 0.3rem;
+    vertical-align: middle;
+}
+
+.tag-section {
+    margin-top: 1rem;
+}
+
+.tag-section h4 {
+    font-size: 0.75rem;
+    color: #555;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-bottom: 0.4rem;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+}
+
+.tag {
+    background: #F0F0F0;
+    color: #222;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+}
+
+.meta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    margin-top: 1.2rem;
+}
+
+.meta-box {
+    background: #F9F9F9;
+    border: 1px solid #E2E2E2;
+    padding: 0.6rem;
+    border-radius: 6px;
+}
+
+.meta-label {
+    display: block;
+    font-size: 0.7rem;
+    color: #666;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.meta-value {
+    font-size: 0.8rem;
+    font-weight: 800;
+}
+
+/* --- Metrics Row --- */
+.metrics-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.metric-card {
+    background: #FFFFFF;
+    border-left: 5px solid var(--primary-color);
+    border-radius: var(--radius);
+    padding: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.metric-value {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--dark-bg);
+}
+
+.metric-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #666;
+}
+
+/* --- Form Section --- */
+.profile-form h3 {
+    text-transform: uppercase;
+    font-weight: 900;
+    color: var(--dark-bg);
+    border-bottom: 3px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.2rem;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    margin-bottom: 0.4rem;
+    color: #222;
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    padding: 0.75rem;
+    border: 2px solid #E0E0E0;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-family: inherit;
+}
+
+.form-group input:disabled, 
+.form-group select:disabled, 
+.form-group textarea:disabled {
+    background-color: #F4F6F8;
+    color: #666666;
+    cursor: not-allowed;
+}
+
+/* Buttons */
+.form-actions {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 1rem;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: #FFFFFF;
+    padding: 0.8rem 1.5rem;
+    font-size: 0.95rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.btn:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn-secondary {
+    background-color: #444444;
+    color: #FFFFFF;
+}
+
+.btn-secondary:hover {
+    background-color: #222222;
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-bg);
+    color: var(--text-muted);
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 3rem;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .dashboard-container {
+        grid-template-columns: 1fr;
+    }
+    .form-grid, .metrics-row {
+        grid-template-columns: 1fr;
+    }
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Meta List Styles for Left Profile Card */
+.meta-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-top: 1.2rem;
+}
+
+.meta-item {
+    background: #F9F9F9;
+    border: 1px solid #E2E2E2;
+    padding: 0.6rem 0.8rem;
+    border-radius: 6px;
+}
+
+.meta-item .meta-label {
+    display: block;
+    font-size: 0.7rem;
+    color: #666;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+.meta-item .meta-value {
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: var(--text-dark);
+}
+
+/* ==========================================================================
+   Header Auth Button Styling Fix
+   ========================================================================== */
+
+/* Header Flex Container */
+header .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Orange Block LOGOUT Button */
+.btn-logout {
+    background-color: #FF5E00 !important;
+    color: #FFFFFF !important;
+    border: none !important;
+    padding: 0.75rem 1.8rem !important;
+    font-size: 0.95rem !important;
+    font-weight: 900 !important;
+    text-transform: uppercase !important;
+    border-radius: 6px !important;
+    cursor: pointer !important;
+    letter-spacing: 1px !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    transition: background-color 0.2s ease !important;
+}
+
+.btn-logout:hover {
+    background-color: #E05200 !important;
+}
+
+/* Outline LOGIN / REGISTER Button */
+.btn-auth-header {
+    background-color: transparent !important;
+    border: 2px solid #FF5E00 !important;
+    color: #FF5E00 !important;
+    padding: 0.61rem 1.4rem !important;
+    font-size: 0.85rem !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    border-radius: 6px !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    transition: all 0.2s ease !important;
+}
+
+.btn-auth-header:hover {
+    background-color: #FF5E00 !important;
+    color: #FFFFFF !important;
+}

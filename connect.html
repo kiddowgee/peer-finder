@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/connect_styles.css">
+    <title>Connect & Messages | Gym Peer Finder</title>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="branding">
+                <h1>WELCOME TO GYM PEER FINDER</h1>
+                <h4>YOUR NO.1 GYM BUDDY FINDER</h4>
+            </div>
+            <div class="auth-buttons">
+                <!-- Dynamically injected by auth.js -->
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gym-groups.html">Groups</a></li>
+            <li><a href="peer-match.html">Peer Match</a></li>
+            <li><a href="connect.html" class="active">Connect</a></li>
+            <li><a href="profile.html">Profile</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <section class="page-header">
+            <h2>Messages & Conversations</h2>
+            <p>Coordinate workout times, spotter sessions, and group meetups.</p>
+        </section>
+
+        <!-- Chat Dashboard Layout -->
+        <div class="chat-layout card">
+            <!-- Sidebar: Conversations List -->
+            <aside class="chat-sidebar">
+                <h3>Connections</h3>
+                <ul class="user-list" id="conversationList">
+                    <li class="chat-user-item active" data-id="1" data-name="Alex Rivera" data-type="Peer">
+                        <div class="user-details">
+                            <strong>Alex Rivera</strong>
+                            <span class="preview-text">Hey! Are you hitting legs tomorrow?</span>
+                        </div>
+                    </li>
+                    <li class="chat-user-item" data-id="2" data-name="Jordan Smith" data-type="Peer">
+                        <div class="user-details">
+                            <strong>Jordan Smith</strong>
+                            <span class="preview-text">See you at the park track Saturday!</span>
+                        </div>
+                    </li>
+                    <li class="chat-user-item" data-id="3" data-name="Early Bird Powerlifters" data-type="Group">
+                        <div class="user-details">
+                            <strong>Early Bird Powerlifters</strong>
+                            <span class="preview-text">Group: Squad bench PR day Friday!</span>
+                        </div>
+                    </li>
+                </ul>
+            </aside>
+
+            <!-- Main Chat Area -->
+            <section class="chat-area">
+                <div class="chat-header">
+                    <h3 id="activeChatTitle">Alex Rivera</h3>
+                    <span class="chat-type-badge" id="activeChatType">Peer Connection</span>
+                </div>
+
+                <!-- Message Stream -->
+                <div class="chat-history" id="chatHistory">
+                    <!-- Dynamic messages render here -->
+                </div>
+
+                <!-- Input Form -->
+                <form class="chat-input-form" id="chatForm">
+                    <input type="text" id="chatInput" placeholder="Type a message..." required autocomplete="off">
+                    <button type="submit" class="btn">Send</button>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Tshire x Retha. All rights reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="scripts/auth.js"></script>
+    <script src="scripts/connect_script.js"></script>
+</body>
+</html>

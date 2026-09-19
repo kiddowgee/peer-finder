@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- Scripts -->
+    <script src="scripts/auth.js"></script>
+    <script src="scripts/profile_script.js"></script>
+    <link rel="stylesheet" href="styles/profile_styles.css">
+    <title>My Profile | Gym Peer Finder</title>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="branding">
+                <h1>Welcome to Gym Peer Finder</h1>
+                <h4>Your No.1 Gym Buddy Finder</h4>
+            </div>
+            <div class="auth-buttons">
+                <!-- Injected via scripts/auth.js -->
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gym-groups.html">Groups</a></li>
+            <li><a href="peer-match.html">Peer Match</a></li>
+            <li><a href="connect.html">Connect</a></li>
+            <li><a href="profile.html" class="active">Profile</a></li>
+        </ul>
+    </nav>
+
+    <main class="dashboard-container">
+        <!-- LEFT COLUMN: Profile Summary Card -->
+        <aside class="profile-sidebar">
+            <div class="user-card">
+                <div class="banner">
+                    <span class="verified-badge">Verified Member</span>
+                </div>
+                <div class="avatar-wrapper">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" id="imagePreview" alt="Profile Picture">
+                    <label for="imageUpload" class="avatar-edit-btn">Change</label>
+                    <input type="file" id="imageUpload" accept="image/*" hidden disabled>
+                </div>
+
+                <div class="user-info">
+                    <h2 id="cardPreferredName">Tshire Retha</h2>
+                    <span class="role-badge" id="cardGoal">Hypertrophy / Bodybuilding</span>
+
+                    <div class="meta-list">
+                        <div class="meta-item">
+                            <span class="meta-label">Location</span>
+                            <span class="meta-value" id="cardLocation">Gauteng, ZA</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Preferred Gym</span>
+                            <span class="meta-value" id="cardGym">Metro Fitness Center</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Gym Time Slot</span>
+                            <span class="meta-value" id="cardTime">Evenings (17:00 - 20:00)</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Workout Days</span>
+                            <span class="meta-value" id="cardDays">Mon, Tue, Thu, Fri</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- RIGHT COLUMN: User Details & Form -->
+        <section class="dashboard-content">
+            <form class="profile-form card">
+                <h3>Personal & Profile Details</h3>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="fullName">Full Name & Surname</label>
+                        <input type="text" id="fullName" name="fullName" value="Tshire Retha" disabled required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="age">Age</label>
+                        <input type="number" id="age" name="age" value="24" disabled required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="homeGym">Preferred Gym</label>
+                        <input type="text" id="homeGym" name="homeGym" value="Metro Fitness Center" disabled required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="location">Location</label>
+                        <input type="text" id="location" name="location" value="Gauteng, ZA" disabled required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="focusGoal">Focus Goal</label>
+                        <select id="focusGoal" name="focusGoal" disabled>
+                            <option value="Strength / Powerlifting">Strength / Powerlifting</option>
+                            <option value="Hypertrophy / Bodybuilding" selected>Hypertrophy / Bodybuilding</option>
+                            <option value="Endurance & Cardio">Endurance & Cardio</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="preferredTime">Preferred Gym Time Slot</label>
+                        <select id="preferredTime" name="preferredTime" disabled>
+                            <option value="Mornings (05:00 - 09:00)">Mornings (05:00 - 09:00)</option>
+                            <option value="Afternoons (12:00 - 15:00)">Afternoons (12:00 - 15:00)</option>
+                            <option value="Evenings (17:00 - 20:00)" selected>Evenings (17:00 - 20:00)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="preferredDays">Preferred Workout Days</label>
+                    <input type="text" id="preferredDays" name="preferredDays" value="Mon, Tue, Thu, Fri" disabled required>
+                </div>
+
+                <div class="form-group">
+                    <label for="bio">Bio & Peer Notes</label>
+                    <textarea id="bio" name="bio" rows="4" disabled>Looking for a consistent partner for evening heavy lifting sessions. Focus is bench press and squat spotters!</textarea>
+                </div>
+
+                <div class="form-actions" id="actionButtons">
+                    <button type="submit" id="saveBtn" class="btn" style="display: none;">Save Profile Changes</button>
+                    <button type="reset" id="discardBtn" class="btn btn-secondary" style="display: none;">Discard Changes</button>
+                    <button type="button" id="editBtn" class="btn btn-secondary">Edit Profile</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Tshire x Retha. All rights reserved.</p>
+    </footer>
+
+  
+</body>
+</html>
